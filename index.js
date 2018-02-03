@@ -1,7 +1,4 @@
 var form  = document.getElementsByTagName('form')[0];
-var email = document.getElementById('mail').value;
-var password = document.getElementById('psw').value;
-var error = document.querySelector('.error');
 
 
 
@@ -14,6 +11,10 @@ form.addEventListener("submit", function (event) {
 
 function pass()
 {
+    var email = document.getElementById('mail').value;
+    var password = document.getElementById('psw').value;
+    var error = document.querySelector('.error');
+
     var passwordRegex = /^(?=.*\d)(?=.*[a-z])\w{6,}$/;
     var emaiRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -38,6 +39,9 @@ function pass()
     else
     {
         alert("Successful")
+        error.innerHTML = ""
+        error.className = "error"
+        form.reset();
     }
 
 
